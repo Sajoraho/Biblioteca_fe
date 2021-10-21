@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# Biblioteca_fe
+Este es el repositorio donde estará la parte del front-end
+=======
+>>>>>>> main
 # biblioteca_fe
 
 ## Project setup
@@ -17,3 +24,7 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 945cabd (README modificado)
+>>>>>>> main
