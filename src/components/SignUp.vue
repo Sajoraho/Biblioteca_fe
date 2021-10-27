@@ -12,13 +12,25 @@
                  
                 <input type="text" v-model="user.name" placeholder="Name"> 
                 <br> 
+
+                <input type="text" v-model="user.lastname" placeholder="Lastname"> 
+                <br>
  
                 <input type="email" v-model="user.email" placeholder="Email"> 
                 <br> 
  
-                <input type="number" v-model="user.account.balance" placeholder="Initial Balance"> 
+                <input type="text" v-model="user.register.institution" placeholder="Institution"> 
                 <br> 
- 
+
+                <input type="text" v-model="user.register.address" placeholder="Address"> 
+                <br> 
+
+                <input type="text" v-model="user.register.telephone" placeholder="Telephone"> 
+                <br> 
+
+                <input type="text" v-model="user.register.role" placeholder="Role"> 
+                <br> 
+
                 <button type="submit">Registrarse</button> 
             </form> 
         </div> 
@@ -38,11 +50,13 @@ export default {
                 username: "", 
                 password: "", 
                 name: "", 
+                lastname: "",
                 email: "", 
-                account: { 
-                    lastChangeDate: (new Date()).toJSON().toString(), 
-                    balance: 0, 
-                    isActive: true 
+                register: { 
+                    institution: "", 
+                    address: "", 
+                    telephone: "",
+                    role: "", 
                 } 
             } 
         } 

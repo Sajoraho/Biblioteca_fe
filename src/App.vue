@@ -4,7 +4,7 @@
      <h1>Biblioteca</h1>
      <nav>
        <button v-if="is_auth" v-on:click="loadHome">Inicio</button>
-       <button v-if="is_auth" v-on:click="loadAccount"> Cuenta </button>
+       <button v-if="is_auth" v-on:click="loadRegister"> Cuenta </button>
        <button v-if="is_auth" v-on:click="logOut">Cerrar Sesión</button>
        <button v-if="!is_auth" v-on:click="loadLogIn">Iniciar Sesión</button>
        <button v-if="!is_auth" v-on:click="loadSignUp">Registrarse</button>
@@ -65,8 +65,8 @@ export default {
      alert("Sesión Cerrada");
      this.verifyAuth();
    },
-   loadAccount: function () {
-     this.$router.push({ name: "account" });
+   loadRegister: function () {
+     this.$router.push({ name: "register" });
    },
  },
  created: function () {

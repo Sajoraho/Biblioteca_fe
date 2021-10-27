@@ -3,7 +3,7 @@
     <div v-if="loaded" class="information"> 
         <h1>Información de su cuenta</h1> 
         <h2>Nombre: <span>{{name}}</span></h2> 
-        <h2>Saldo: <span>{{balance}} COP </span></h2> 
+        <h2>Rol: <span>{{role}} </span></h2> 
         <h2>Correo electrónico: <span>{{email}}</span></h2> 
     </div> 
  
@@ -14,14 +14,16 @@ import jwt_decode from "jwt-decode";
 import axios from 'axios'; 
  
 export default { 
-    name: "Account", 
+    name: "Register", 
  
     data: function(){ 
         return { 
             name: "", 
+            lastname: "",
             email: "", 
-            balance: 0, 
-            loaded: false, 
+            institution: "", 
+            address: "",
+            telephone: "" 
         } 
     }, 
  
@@ -40,9 +42,11 @@ export default {
             axios.get(`https://mision-tic-biblioteca.herokuapp.com/user/${userId}/`, {headers: {'Authorization': `Bearer ${token}`}}) 
                 .then((result) => { 
                     this.name = result.data.name; 
-                    this.email = result.data.email;  
-                    this.balance = result.data.account.balance; 
-                    this.loaded = true; 
+                    this.lastname = result.data.lastname;
+                    this.email = result.data.email; 
+                    this.institution = result.data.institution; 
+                    this.address = result.data.address;
+                    this.telephone = result.data.telephone
                     }) 
                 .catch(() => { 
                     this.$emit('logOut'); 
