@@ -5,30 +5,30 @@
             <h2>Registrarse</h2> 
  
             <form v-on:submit.prevent="processSignUp" > 
-                <input type="text" v-model="user.username" placeholder="Username"> 
+                <input type="text" v-model="user.username" placeholder="Alias"> 
                 <br> 
-                <input type="password" v-model="user.password" placeholder="Password"> 
+                <input type="password" v-model="user.password" placeholder="Contraseña"> 
                 <br> 
                  
-                <input type="text" v-model="user.name" placeholder="Name"> 
+                <input type="text" v-model="user.name" placeholder="Nombre"> 
                 <br> 
 
-                <input type="text" v-model="user.lastname" placeholder="Lastname"> 
+                <input type="text" v-model="user.lastname" placeholder="Apellido"> 
                 <br>
  
-                <input type="email" v-model="user.email" placeholder="Email"> 
+                <input type="email" v-model="user.email" placeholder="Correo electrónico"> 
                 <br> 
  
-                <input type="text" v-model="user.register.institution" placeholder="Institution"> 
+                <input type="text" v-model="user.register.institution" placeholder="Institución"> 
                 <br> 
 
-                <input type="text" v-model="user.register.address" placeholder="Address"> 
+                <input type="text" v-model="user.register.address" placeholder="Dirección"> 
                 <br> 
 
-                <input type="text" v-model="user.register.telephone" placeholder="Telephone"> 
+                <input type="text" v-model="user.register.telephone" placeholder="Teléfono"> 
                 <br> 
 
-                <input type="text" v-model="user.register.role" placeholder="Role"> 
+                <input type="text" v-model="user.register.role_choose" placeholder="Rol"> 
                 <br> 
 
                 <button type="submit">Registrarse</button> 
@@ -56,7 +56,7 @@ export default {
                     institution: "", 
                     address: "", 
                     telephone: "",
-                    role: "", 
+                    role_choose: "", 
                 } 
             } 
         } 
@@ -74,17 +74,17 @@ export default {
                         username: this.user.username, 
                         token_access: result.data.access, 
                         token_refresh: result.data.refresh, 
-                    } 
+                    }; 
                      
-                    this.$emit('completedSignUp', dataSignUp) 
+                    this.$emit('completedSignUp', dataSignUp); 
                 }) 
-                .catch((error) => { console.log(error) 
+                .catch((error) => { console.log(error); 
               alert("ERROR: Fallo en el registro."); 
  
                 }); 
-        } 
-    } 
-} 
+        }, 
+    }, 
+}; 
 </script> 
 <style> 
  
@@ -100,10 +100,10 @@ export default {
     } 
  
     .container_signUp_user { 
-        border: 3px solid  #283747; 
-        border-radius: 10px; 
-        width: 25%; 
-        height: 60%; 
+        border: 2px solid  #008080; 
+        border-radius: 4px; 
+        width: 50%; 
+        height: 92%; 
          
         display: flex; 
         flex-direction: column; 
@@ -112,7 +112,7 @@ export default {
     } 
  
     .signUp_user h2{ 
-        color: #283747; 
+        color: #a52a2a; 
  
     } 
  

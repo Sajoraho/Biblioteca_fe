@@ -4,7 +4,9 @@ import App from './App.vue';
 import LogIn from './components/LogIn.vue' 
 import SignUp from './components/SignUp.vue' 
 import Home from './components/Home.vue' 
-import Register from './components/Register.vue' 
+import Register from './components/Register.vue'
+import Book from './components/Book.vue' 
+import BookDetails from './components/BookDetails.vue' 
  
 const routes = [{ 
         path: '/', 
@@ -30,7 +32,18 @@ const routes = [{
         path: '/user/register', 
         name: "register", 
         component: Register 
-    } 
+    }, 
+    { 
+        path: '/book', 
+        name: "book", 
+        component: Book 
+    }, 
+    { 
+        path: '/book/details/:id', 
+        name: "bookDetails", 
+        component: BookDetails 
+    }, 
+
 ]; 
  
 const router = createRouter({ 

@@ -4,9 +4,10 @@
      <h1>Biblioteca</h1>
      <nav>
        <button v-if="is_auth" v-on:click="loadHome">Inicio</button>
-       <button v-if="is_auth" v-on:click="loadRegister"> Cuenta </button>
-       <button v-if="is_auth" v-on:click="logOut">Cerrar Sesión</button>
-       <button v-if="!is_auth" v-on:click="loadLogIn">Iniciar Sesión</button>
+       <button v-if="is_auth" v-on:click="loadRegister"> Mi cuenta </button>
+      <button v-if="is_auth" v-on:click="loadBook"> Ver catálogo </button>
+       <button v-if="is_auth" v-on:click="logOut">Cerrar sesión</button>
+       <button v-if="!is_auth" v-on:click="loadLogIn">Iniciar sesión</button>
        <button v-if="!is_auth" v-on:click="loadSignUp">Registrarse</button>
      </nav>
    </div>
@@ -68,10 +69,16 @@ export default {
    loadRegister: function () {
      this.$router.push({ name: "register" });
    },
- },
- created: function () {
+
+
+    loadBook: function () {
+      this.$router.push({ name: "book" });
+    },  
+ }, 
+    created: function () {
    this.verifyAuth();
  },
+
 };
 </script>
 <style>
@@ -80,53 +87,54 @@ body {
 }
 .header {
  margin: 0%;
- padding: 0;
+ padding: 20;
  width: 100%;
- height: 10vh;
+ height: vh;
  min-height: 100px;
  background-color: #283747;
  color: #e5e7e9;
- display: flex;
  justify-content: space-between;
  align-items: center;
 }
 .header h1 {
  width: 20%;
  text-align: center;
+font-family: "Georgia";
 }
 .header nav {
  height: 100%;
- width: 20%;
+ width: 28%;
  display: flex;
- justify-content: space-around;
+ justify-content: center;
  align-items: center;
- font-size: 20px;
+ font-size: 50px;
 }
 .header nav button {
  color: #e5e7e9;
  background: #283747;
- border: 1px solid #e5e7e9;
- border-radius: 5px;
- padding: 10px 20px;
+ border: 1px solid #283747;
+ border-radius: px;
+ padding: 0px px;
+font-family: "Georgia";
 }
 .header nav button:hover {
  color: #283747;
  background: #e5e7e9;
- border: 1px solid #e5e7e9;
+ border: 1px solid #283747;
 }
 .main-component {
  height: 75vh;
  margin: 0%;
  padding: 0%;
- background: #fdfefe;
+ background: #c0c0c0;
 }
 .footer {
  margin: 0;
  padding: 0;
  width: 100%;
- height: 10vh;
+ height: 1vh;
  min-height: 100px;
- background-color: #283747;
+ background-color: #6b8e23;
  color: #e5e7e9;
 }
 .footer h2 {
@@ -135,5 +143,8 @@ body {
  display: flex;
  justify-content: center;
  align-items: center;
+ font-family: "Georgia";
+ font-weight: normal;
+  font-size: 15px;
 }
 </style>

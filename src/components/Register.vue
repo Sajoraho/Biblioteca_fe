@@ -1,12 +1,15 @@
 <template> 
  
-    <div v-if="loaded" class="information"> 
+    <div class="information"> 
         <h1>Información de su cuenta</h1> 
         <h2>Nombre: <span>{{name}}</span></h2> 
-        <h2>Rol: <span>{{role}} </span></h2> 
+        <h2>Apellido: <span>{{lastname}}</span></h2>
         <h2>Correo electrónico: <span>{{email}}</span></h2> 
+        <h2>Institución: <span>{{institution}}</span></h2> 
+        <h2>Dirección: <span>{{address}}</span></h2>
+        <h2>Teléfono: <span>{{telephone}}</span></h2>
+        <h2>Rol: <span>{{role}} </span></h2> 
     </div> 
- 
 </template> 
  
 <script> 
@@ -23,10 +26,10 @@ export default {
             email: "", 
             institution: "", 
             address: "",
-            telephone: "" 
+            telephone: "",
+            role: "" 
         } 
     }, 
- 
     methods: { 
         getData: async function () { 
  
@@ -41,14 +44,20 @@ export default {
              
             axios.get(`https://mision-tic-biblioteca.herokuapp.com/user/${userId}/`, {headers: {'Authorization': `Bearer ${token}`}}) 
                 .then((result) => { 
+                    
+
                     this.name = result.data.name; 
                     this.lastname = result.data.lastname;
                     this.email = result.data.email; 
-                    this.institution = result.data.institution; 
-                    this.address = result.data.address;
-                    this.telephone = result.data.telephone
+                    this.institution = result.data.register.institution; 
+                    this.address = result.data.register.address;
+                    this.telephone = result.data.register.telephone;
+                    this.role = result.data.register.role;
+                    console.log(result);
                     }) 
-                .catch(() => { 
+                    
+                .catch((error) => { 
+                    console.log(error);
                     this.$emit('logOut'); 
                 }); 
         }, 
@@ -71,29 +80,35 @@ export default {
 </script> 
  
 <style> 
-    .information{ 
+.information{ 
         margin: 0; 
         padding: 0%; 
         width: 100%; 
         height: 100%; 
- 
         display: flex; 
         flex-direction: column; 
         justify-content: center;     
         align-items: center; 
     } 
-    .information h1{ 
-        font-size: 60px; 
-        color: #0f1316; 
+.information h1{ 
+        font-size: 30px; 
+        color: #663399;
+        font-weight: normal;
+        font-family: "Georgia";
+          
     } 
  
-    .information h2{ 
-        font-size: 40px; 
-        color: #283747; 
+.information h2{ 
+        font-size: 20px; 
+        color: #283747;
+        font-weight: normal;
+        font-family: "Georgia";
     } 
  
-    .information span{ 
-        color: crimson; 
-        font-weight: bold; 
+.information span{ 
+        color: #008b8b; 
+        font-weight: normal;
+        font-family: "Georgia";
+        
     } 
 </style> 
