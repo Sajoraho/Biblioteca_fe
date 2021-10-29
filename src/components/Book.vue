@@ -3,12 +3,24 @@
     <table>
         <thead>
           <th>Id</th>
-          <th>Nombre</th>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Idioma</th>
+          <th>Año</th>
+          <th>Editorial</th>
+          <th>Género</th>
+          <th>Ejemplar</th>
         </thead>
         <tbody>
           <tr v-for="item in items" :key="item.id">
             <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.author}}</td>
+            <td>{{item.language}}</td>
+            <td>{{item.year}}</td>
+            <td>{{item.publisher}}</td>
+            <td>{{item.genre}}</td>
+            <td>{{item.number}}</td>
             <td><button v-on:click="bookEditar(item.id)">Editar</button></td>
           </tr>
         </tbody>
@@ -74,7 +86,7 @@ export default {
 };
 </script>
 <style>
-.information {
+.informationbook {
   margin: 0;
   padding: 0%;
   width: 100%;
@@ -83,17 +95,20 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    font-weight: normal;
 }
 .informationbook h1 {
   font-size: 60px;
   color: #0f1316;
+    font-weight: normal;
 }
 .informationbook h2 {
   font-size: 40px;
   color: #283747;
+    font-weight: normal;
 }
 .informationbook span {
   color: crimson;
-  font-weight: bold;
+  font-weight: normal;
 }
 </style>

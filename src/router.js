@@ -34,7 +34,7 @@ const routes = [{
         component: Register 
     }, 
     { 
-        path: '/book', 
+        path: '/book/list', 
         name: "book", 
         component: Book 
     }, 
