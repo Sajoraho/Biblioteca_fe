@@ -1,7 +1,13 @@
 <template>
   <div class="bookd">
 
-      Nombre: {{item.name}}
+      <span>Título: {{item.title}} </span><br>
+        Autor: {{item.author}} <br>
+        Idioma: {{item.language}} <br>
+        Año: {{item.year}} <br>
+        Editorial: {{item.publisher}} <br>
+        Género: {{item.genre}} <br>
+        Ejemplar: {{item.number}}
        
   </div>
 </template>
@@ -53,6 +59,8 @@ export default {
           this.$emit("logOut");
         });
     },
+
+    
   },
   created: async function () {
     this.getData();
@@ -61,7 +69,7 @@ export default {
 </script>
 <style>
 .bookd {
-  margin: 0;
+  margin: 30;
   padding: 0%;
   width: 100%;
   height: 100%;
@@ -69,17 +77,23 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
 }
 .bookd h1 {
   font-size: 60px;
   color: #0f1316;
+  font-family: "Georgia";
+  justify-content: center;
 }
 .bookd h2 {
   font-size: 40px;
   color: #283747;
+  font-family: "Georgia";
 }
 .bookd span {
-  color: crimson;
+  color: crimsn;
   font-weight: bold;
+  font-family: "Georgia";
+  font-size: 30px;
 }
 </style>

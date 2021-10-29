@@ -7,6 +7,7 @@ import Home from './components/Home.vue'
 import Register from './components/Register.vue'
 import Book from './components/Book.vue' 
 import BookDetails from './components/BookDetails.vue' 
+import AddBook from './components/AddBook.vue' 
  
 const routes = [{ 
         path: '/', 
@@ -43,6 +44,11 @@ const routes = [{
         name: "bookDetails", 
         component: BookDetails 
     }, 
+    { 
+        path: '/addBook', 
+        name: "addBook", 
+        component: AddBook 
+    },
 
 ]; 
  

@@ -9,6 +9,7 @@
         <h2>Dirección: <span>{{address}}</span></h2>
         <h2>Teléfono: <span>{{telephone}}</span></h2>
         <h2>Rol: <span>{{role}} </span></h2> 
+        
     </div> 
 </template> 
  
@@ -70,7 +71,20 @@ export default {
                 .catch(() => { 
                     this.$emit('logOut'); 
                 }); 
-        } 
+        }, 
+
+        editUser: function(){
+                if(document.getElementsByClassName('casilla1').name.disabled ==  false){
+                    document.getElementsByClassName("casilla1").name.disabled = true;
+                    document.getElementsByClassName("casilla2").email.disabled = true;
+                }
+                else if(document.getElementsByClassName('casilla1').name.disabled == true){
+                    document.getElementsByClassName("casilla1").name.disabled =  false;
+                    document.getElementsByClassName("casilla2").email.disabled =  false;
+                }
+            },
+
+
     }, 
  
     created: async function(){ 
@@ -92,7 +106,7 @@ export default {
     } 
 .information h1{ 
         font-size: 30px; 
-        color: #663399;
+        color: #66399;
         font-weight: normal;
         font-family: "Georgia";
           
@@ -106,8 +120,8 @@ export default {
     } 
  
 .information span{ 
-        color: #008b8b; 
-        font-weight: normal;
+        color: #9A7D0A; 
+        font-weight: bold;
         font-family: "Georgia";
         
     } 

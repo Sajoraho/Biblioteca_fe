@@ -20,7 +20,7 @@
      </router-view>
    </div>
    <div class="footer">
-     <h2>Con el apoyo de: Misión TIC 2021</h2>
+     <h2>Michelle Páez - Santiago Rojas | Con el apoyo de: Misión TIC 2021 </h2>
    </div>
  </div>
 </template>
@@ -87,11 +87,14 @@ body {
 }
 .header {
  margin: 0%;
- padding: 20;
+ padding: 0;
  width: 100%;
  height: vh;
- min-height: 100px;
- background-color: #283747;
+ min-height: 120px;
+ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./assets/fondoapp.jpg);
+  background-position: top;
+  background-size: 20%;
  color: #e5e7e9;
  justify-content: space-between;
  align-items: center;
@@ -99,31 +102,39 @@ body {
 .header h1 {
  width: 20%;
  text-align: center;
+
 font-family: "Georgia";
+font-size: 45px;
 }
 .header nav {
- height: 100%;
- width: 28%;
+ height: 0%;
+ width: 40%;
  display: flex;
  justify-content: center;
  align-items: center;
- font-size: 50px;
+ font-size: 10px;
 }
 .header nav button {
  color: #e5e7e9;
  background: #283747;
- border: 1px solid #283747;
- border-radius: px;
- padding: 0px px;
+ background-color: rgba(0, 0, 0, 0.63);
+ border: 1px solid #28;
+ font-size: 15px;
+ width: 30%;
 font-family: "Georgia";
+justify-content: center;
+padding: 20;
 }
 .header nav button:hover {
  color: #283747;
  background: #e5e7e9;
  border: 1px solid #283747;
 }
+
+
+
 .main-component {
- height: 75vh;
+ height: 70vh;
  margin: 0%;
  padding: 0%;
  background: #c0c0c0;
@@ -132,19 +143,20 @@ font-family: "Georgia";
  margin: 0;
  padding: 0;
  width: 100%;
- height: 1vh;
- min-height: 100px;
- background-color: #6b8e23;
+ height: 0vh;
+ min-height: 50px;
+ background-color: #283747;
  color: #e5e7e9;
 }
 .footer h2 {
  width: 100%;
- height: 100%;
+ height: 5vh;
+  padding: 0;
  display: flex;
  justify-content: center;
  align-items: center;
  font-family: "Georgia";
  font-weight: normal;
-  font-size: 15px;
+  font-size: 12px;
 }
 </style>

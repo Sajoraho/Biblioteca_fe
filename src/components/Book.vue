@@ -21,10 +21,11 @@
             <td>{{item.publisher}}</td>
             <td>{{item.genre}}</td>
             <td>{{item.number}}</td>
-            <td><button v-on:click="bookEditar(item.id)">Editar</button></td>
+            <td><button v-on:click="bookEditar(item.id)">Ver detalles</button></td>
           </tr>
         </tbody>
-      </table>
+      </table> <br>
+      <button v-on:click="bookAgregar">Agregar nuevo libro</button>
   </div>
 </template>
 
@@ -78,6 +79,9 @@ export default {
     },
     bookEditar: function(id){ 
       this.$router.push({ name: "bookDetails" , params: { id } });
+    },
+    bookAgregar: function () { 
+      this.$router.push({ name: "addBook" });
     }
   },
   created: async function () {
@@ -87,28 +91,36 @@ export default {
 </script>
 <style>
 .informationbook {
-  margin: 0;
-  padding: 0%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-    font-weight: normal;
+margin: 0;
+padding: 0%;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: ;
+align-items: center;
+font-weight: normal;
+
 }
-.informationbook h1 {
-  font-size: 60px;
-  color: #0f1316;
-    font-weight: normal;
+.informationbook th {
+    background-color: rgba(0, 0, 0, 0.4);
+font-size: 14px;
+color: #FDFEFE;
+font-weight: normal;
+text-align: center;
+font-family: "Georgia";
+padding: 1em;
+border-bottom: 1px solid #040;
+border-right: 1px solid #040;
+width: 0%;
+
+
 }
-.informationbook h2 {
-  font-size: 40px;
-  color: #283747;
-    font-weight: normal;
+.informationbook td {
+font-size: 13px;
+color: #283747;
+font-weight: normal;
+text-align: left;
 }
-.informationbook span {
-  color: crimson;
-  font-weight: normal;
-}
+
 </style>
