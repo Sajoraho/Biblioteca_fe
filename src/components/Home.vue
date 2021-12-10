@@ -1,8 +1,23 @@
 <template> 
  
-    <div class="greetings"> 
-        <h1>¡Bienvenido(a)  <span> {{username}} </span>!</h1> 
-    </div> 
+     <table class="agrupar">
+    <td>
+      <img
+        src="../assets/inventario.png" alt="configuracion" class="imagen"
+      />
+    </td>
+    <td>
+        <div class="prueba1">
+      <div class="prueba2">
+        <p>
+          Sistema de gestion de inventarios desarrollado para satisfacer las
+          necesidades de control
+        </p>
+        <p>Control y gestión de productos para todos los clientes</p>
+      </div>
+      </div>
+    </td>
+  </table>
  
 </template> 
  
@@ -22,24 +37,56 @@ export default {
  
 
 <style> 
-    .greetings{ 
-        margin: 0; 
-        padding: 0%; 
-        height: 100%; 
-        width: 100%; 
-     
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-    } 
- 
-    .greetings h1{ 
-        font-size: 50px; 
-        color: #283747; 
-    } 
- 
-    .greetings span{ 
-        color: crimson; 
-        font-weight: bold; 
-    } 
+.agrupar {
+  display: flex;
+  align-items: center;
+}
+.imagen {
+
+  width: 400px;
+  margin-left: 30%;
+  margin-top: 30%;
+}
+.parrafo {
+
+  margin: auto;
+  color: aliceblue;
+  font-size: 50px;
+  text-align: center;
+  border: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.prueba1{
+position: absolute;
+width: 668px;
+height: 402px;
+left: 1200px;
+top: 220px;
+
+background: rgba(196, 196, 196, 0.15);
+border-radius: 65px;
+}
+
+.prueba2{
+position: absolute;
+width: 574px;
+height: 252px;
+left: 41px;
+top: 27px;
+
+font-family: Montserrat;
+font-style: italic;
+font-weight: bold;
+font-size: 30px;
+line-height: 34px;
+/* or 113% */
+
+text-align: right;
+letter-spacing: -2px;
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
 </style> 

@@ -7,11 +7,9 @@
             <form v-on:submit.prevent="processSignUp" > 
                 <input type="text" v-model="user.username" placeholder="Username"> 
                 <br> 
-                <input type="password" v-model="user.password" placeholder="Password"> 
-                <br> 
-                 
+
                 <input type="text" v-model="user.name" placeholder="Name"> 
-                <br> 
+                <br>
 
                 <input type="text" v-model="user.lastname" placeholder="Lastname"> 
                 <br>
@@ -19,17 +17,15 @@
                 <input type="email" v-model="user.email" placeholder="Email"> 
                 <br> 
  
-                <input type="text" v-model="user.register.institution" placeholder="Institution"> 
+                <input type="text" v-model="user.register.phone" placeholder="Phone"> 
                 <br> 
 
                 <input type="text" v-model="user.register.address" placeholder="Address"> 
                 <br> 
 
-                <input type="text" v-model="user.register.telephone" placeholder="Telephone"> 
+                <input type="password" v-model="user.password" placeholder="Password"> 
                 <br> 
-
-                <input type="text" v-model="user.register.role" placeholder="Role"> 
-                <br> 
+                 
 
                 <button type="submit">Registrarse</button> 
             </form> 
@@ -52,12 +48,9 @@ export default {
                 name: "", 
                 lastname: "",
                 email: "", 
-                register: { 
-                    institution: "", 
-                    address: "", 
-                    telephone: "",
-                    role: "", 
-                } 
+                phone: "", 
+                addres: ""
+                
             } 
         } 
     }, 
